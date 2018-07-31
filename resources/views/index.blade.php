@@ -32,8 +32,14 @@
 			<td>{{$content['username']}}</td>
 			@if($user['name'] === $content['username'])
 			<td>
-			<a href="{{action('ContentController@edit', $content['id'])}}">Edit</a>
-			<a href="{{action('ContentController@dest', $content['id'])}}">Destroy</a>
+				<form action="{{action('ContentController@edit', $content['id'])}}">
+					<input type="submit" value="Edit"/>
+				</form>
+				<form action="{{action('ContentController@destroy', $content['id'])}}" method="post">
+                    		{{csrf_field()}}
+                    		<input name="_method" type="hidden" value="DELETE">
+                    		<button class="btn btn-danger" type="submit">Delete</button>
+ 	                   	</form>
 			</td>
 			@else
 			<td>			</td>

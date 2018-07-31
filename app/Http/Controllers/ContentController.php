@@ -18,12 +18,13 @@ class ContentController extends Controller
 	function create(){
 			
 	}
-	public function dest($id){
+	public function destroy($id){
 		return("delete id = $id"); 
 		content::find($id)->delete();
         	return redirect('/');
 	}
 	function edit($id){
+		$content = content::where('id', $id)->first();
 		return("edit id = $id");	
 	}
 

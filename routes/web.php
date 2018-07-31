@@ -12,7 +12,8 @@
 */
 
 Route::get('/', 'ContentController@index');
-
+Route::delete('/content/{id}','ContentController@destroy');
+Route::get('/edit/ticket/{id}/edit','ContentController@edit');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
