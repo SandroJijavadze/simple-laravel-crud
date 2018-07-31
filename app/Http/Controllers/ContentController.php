@@ -15,4 +15,17 @@ class ContentController extends Controller
 		$contents=content::all();
 		return view('index', compact('contents', 'user'));
 	}
+	function create(){
+			
+	}
+	public function dest($id){
+		return("delete id = $id"); 
+		content::find($id)->delete();
+        	return redirect('/');
+	}
+	function edit($id){
+		return("edit id = $id");	
+	}
+
+
 }
