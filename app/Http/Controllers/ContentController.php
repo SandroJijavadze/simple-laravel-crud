@@ -6,10 +6,13 @@ use Illuminate\Http\Request;
 use App\content;
 //use App\user;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 
 class ContentController extends Controller
 {
+	
 	function index(){
+	
 		$user = Auth::user();
 		//$user = "randomUser1235";
 		$contents=content::all();
@@ -19,14 +22,21 @@ class ContentController extends Controller
 			
 	}
 	public function destroy($id){
-		return("delete id = $id"); 
 		content::find($id)->delete();
         	return redirect('/');
 	}
 	function edit($id){
-		$content = content::where('id', $id)->first();
-		return("edit id = $id");	
+		$user = Auth::user();
+		$contents = content::where('id', $id)->first();
+		return view('contentedit', compact('contents', 'user'))->with('content', $contents); 
 	}
 
+
+	function update($id){
+		$cont = content::find($id);
+		$cont-> text = Input::get('text');
+		$cont->save();
+		return redirect('/');
+	}
 
 }

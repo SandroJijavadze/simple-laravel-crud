@@ -38,7 +38,7 @@
 				<form action="{{action('ContentController@destroy', $content['id'])}}" method="post">
                     		{{csrf_field()}}
                     		<input name="_method" type="hidden" value="DELETE">
-                    		<button class="btn btn-danger" type="submit">Delete</button>
+                    		<button type="submit">Delete</button>
  	                   	</form>
 			</td>
 			@else
