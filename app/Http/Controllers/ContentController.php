@@ -15,13 +15,14 @@ class ContentController extends Controller
 	
 		$user = Auth::user();
 		//$user = "randomUser1235";
-		$contents=content::all();
+		$contents=content::orderBy('created_at', 'desc')->get();
 		return view('index', compact('contents', 'user'));
 	}
 	function create(){
-			
+		$user = Auth::user();
+		return view('contentcreate', compact('user'));		
 	}
-	public function destroy($id){
+	function destroy($id){
 		content::find($id)->delete();
         	return redirect('/');
 	}
@@ -36,6 +37,13 @@ class ContentController extends Controller
 		$cont = content::find($id);
 		$cont-> text = Input::get('text');
 		$cont->save();
+		return redirect('/');
+	}
+	function store(){
+		$content = new content;
+		$content->text = Input::post('text');
+		$content->username = Auth::user()->name;	
+		$content->save();
 		return redirect('/');
 	}
 

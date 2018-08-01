@@ -11,7 +11,7 @@
 		@if (Route::has('login'))
 		 <div class="top-right links">
 		     @auth
-			 <h2>Hello {{$user['name']}}!</h2>
+			 <h2>Hello {{$user['name']}}!</h2> <a href="{{ route('content.create') }}">Create New Content</a>
 		     @else
 			 <a href="{{ route('login') }}">Login</a>
 			 <a href="{{ route('register') }}">Register</a>
