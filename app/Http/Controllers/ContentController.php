@@ -12,10 +12,8 @@ class ContentController extends Controller
 {
 	
 	function index(){
-	
 		$user = Auth::user();
-		//$user = "randomUser1235";
-		$contents=content::orderBy('created_at', 'desc')->get();
+		$contents=content::orderBy('created_at', 'desc')->paginate(5);
 		return view('index', compact('contents', 'user'));
 	}
 	function create(){

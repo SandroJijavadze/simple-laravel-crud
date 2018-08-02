@@ -15,3 +15,4 @@ Auth::routes();
 Route::get('/', 'ContentController@index');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::resource('content', 'ContentController');
+

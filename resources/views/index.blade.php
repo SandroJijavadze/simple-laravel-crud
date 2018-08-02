@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'CRUD Website')
 @section('content')
-<table style="width: 90%; margin: auto;" class="table table-hover">		
+<table class="table table-hover">		
 <tr>
 	<thead class="thead-light">			
 		<th scope="col">Content</th>
@@ -40,4 +40,5 @@
 </tr>
 @endforeach
 </table>
+{{ $contents->links()}}
 @endsection
