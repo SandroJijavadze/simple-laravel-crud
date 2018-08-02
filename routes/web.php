@@ -11,12 +11,7 @@
 |
 */
 
-Route::get('/', 'ContentController@index');
-//Route::delete('/content/{id}','ContentController@destroy');
-//Route::get('/edit/content/{id}/edit','ContentController@edit');
-//Route:put('/
-
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'ContentController@index');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::resource('content', 'ContentController');

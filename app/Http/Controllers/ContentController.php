@@ -20,7 +20,7 @@ class ContentController extends Controller
 	}
 	function create(){
 		$user = Auth::user();
-		return view('contentcreate', compact('user'));		
+		return view('content.create', compact('user'));		
 	}
 	function destroy($id){
 		content::find($id)->delete();
@@ -29,7 +29,7 @@ class ContentController extends Controller
 	function edit($id){
 		$user = Auth::user();
 		$contents = content::where('id', $id)->first();
-		return view('contentedit', compact('contents', 'user'))->with('content', $contents); 
+		return view('content.edit', compact('contents', 'user'))->with('content', $contents); 
 	}
 
 
