@@ -23,6 +23,21 @@
     <div id="app">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="/">CRUD Website</a>
+	<ul class="navbar-nav mr-auto">
+		<li class="nav-item active">
+        		<a class="nav-link" href="/biletebi">Tickets<span class="sr-only">(current)</span></a>
+		</li>	
+	</ul>
+<!--	<ul class="navbar-nav mr-auto">
+      		<li class="nav-item active">
+        		<a class="nav-link" href="/biletebi?from=tbilisi">Tbilisi<span class="sr-only">(current)</span></a>
+		</li>	
+		<li class="nav-item active">
+        		<a class="nav-link" href="/biletebi?from=batumi">Batumi<span class="sr-only">(current)</span></a>
+      		</li>
+	
+	</ul>	-->
+		
 			<div class="container-fluid">
 				@if (Route::has('login'))
 				     @auth

@@ -14,5 +14,6 @@
 Auth::routes();
 Route::get('/', 'ContentController@index');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::get('biletebi', 'BiletebiController@index');
 Route::resource('content', 'ContentController');
 

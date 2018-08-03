@@ -1,5 +1,9 @@
 @extends('layouts.app')
 @section('title', 'CRUD Website')
+@section('biletebi')
+
+@endsection
+
 @section('content')
 <table class="table table-hover">		
 <tr>
