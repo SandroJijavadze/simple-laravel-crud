@@ -16,8 +16,7 @@ class BiletebiController extends Controller
 			return view('biletebi')->with('ret', $ret);
 		}
 		
-		$train = new Trains();
-	        $ret = $train->getTrains($from);	
+	        $ret = Trains::getTrains($from);	
 		return view('biletebi')->with('ret', $ret);
 
 	}	
