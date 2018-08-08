@@ -19,7 +19,7 @@
 	<td>{{$content['text']}}</td>
 	<td>{{$content['created_at']}}</td>
 	<td>{{$content['username']}}</td>
-	@if($user['name'] === $content['username'])
+	@if(Auth::user()->name === $content['username'])
 	<td style="width: 90px">
 		<div class="inline">
 			<form style="margin: 0; padding: 0;"  style="display: inline;" action="{{action('ContentController@edit', $content['id'])}}">

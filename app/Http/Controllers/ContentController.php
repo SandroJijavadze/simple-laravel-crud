@@ -12,22 +12,19 @@ class ContentController extends Controller
 {
 	
 	function index(){
-		$user = Auth::user();
 		$contents=content::orderBy('created_at', 'desc')->paginate(5);
 		return view('index', compact('contents', 'user'));
 	}
 	function create(){
-		$user = Auth::user();
-		return view('content.create', compact('user'));		
+		return view('content.create');		
 	}
 	function destroy($id){
 		content::find($id)->delete();
         	return redirect('/');
 	}
 	function edit($id){
-		$user = Auth::user();
 		$contents = content::where('id', $id)->first();
-		return view('content.edit', compact('contents', 'user'))->with('content', $contents); 
+		return view('content.edit')->with('content', $contents); 
 	}
 
 
